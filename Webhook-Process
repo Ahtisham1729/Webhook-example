@@ -1,4 +1,15 @@
-Push new changes. 
-push the 2nd stagep
-pUSH the 3rd stage
-push 5th stage 
+Go to github.
+Add webhooks in the git repository that needs to be build.
+Go to settings in git --> webhooks --> Add webhooks.
+    Payload URL --> URL where the jenkins is running.
+    Specify secret --> Using API token in Jenkins(Can be generated in Jenkins configuration)
+    Click " Just Push the event"
+    Add webhook and it will be created.
+
+Go to Jenkins.
+Create a simple free-style project.
+    Add the github URL in SCM.
+    In build Trigger select "Github hook Trigger for GITScm pulling"
+    Clicke save.
+    
+This will constantly update the build with each new commit done to Source code.
